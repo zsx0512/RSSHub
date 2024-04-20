@@ -68,17 +68,17 @@ async function handler(ctx) {
 
     const rootUrl = 'https://hjd2048.com';
 
-    const entranceDomain = await cache.tryGet('2048:entranceDomain', async () => {
-        const { data: response } = await got('https://hjd.tw', {
-            headers: {
-                accept: '*/*',
-            },
-        });
-        const $ = load(response);
-        const targetLink = $('table.group-table tr').eq(1).find('td a').eq(0).attr('href');
-        return targetLink;
-    });
-
+    // const entranceDomain = await cache.tryGet('2048:entranceDomain', async () => {
+    //     const { data: response } = await got('https://hjd.tw', {
+    //         headers: {
+    //             accept: '*/*',
+    //         },
+    //     });
+    //     const $ = load(response);
+    //     const targetLink = $('table.group-table tr').eq(1).find('td a').eq(0).attr('href');
+    //     return targetLink;
+    // });
+    const entranceDomain = `https://bbs.9fv56.com/`;
     const currentUrl = `${entranceDomain}/2048/thread.php?fid-${id}.html`;
 
     const response = await got({
@@ -87,8 +87,8 @@ async function handler(ctx) {
     });
 
     const $ = load(response.data);
-    const currentHost = `https://${new URL(response.url).host}`; // redirected host
-
+    // const currentHost = `https://${new URL(response.url).host}`; // redirected host
+    const currentHost = `https://bbs.9fv56.com/`;
     $('#shortcut').remove();
     $('tr[onmouseover="this.className=\'tr3 t_two\'"]').remove();
 
