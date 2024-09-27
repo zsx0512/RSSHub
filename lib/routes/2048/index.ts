@@ -78,7 +78,7 @@ async function handler(ctx) {
     //     const targetLink = $('table.group-table tr').eq(1).find('td a').eq(0).attr('href');
     //     return targetLink;
     // });
-    const entranceDomain = `https://bbs.9fv56.com/`;
+    const entranceDomain = `https://hd.mkx1x.com/`;
     const currentUrl = `${entranceDomain}/2048/thread.php?fid-${id}.html`;
 
     const response = await got({
@@ -88,7 +88,7 @@ async function handler(ctx) {
 
     const $ = load(response.data);
     // const currentHost = `https://${new URL(response.url).host}`; // redirected host
-    const currentHost = `https://bbs.9fv56.com/`;
+    const currentHost = `https://hd.mkx1x.com/`;
     $('#shortcut').remove();
     $('tr[onmouseover="this.className=\'tr3 t_two\'"]').remove();
 
